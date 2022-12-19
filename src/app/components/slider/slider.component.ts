@@ -7,7 +7,7 @@ import { Movie } from '../../models/movie';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss'],
   animations: [
-    trigger('fade',[
+    trigger('slideFade',[
       state('void',style({
         opacity:0
       })),
@@ -17,26 +17,18 @@ import { Movie } from '../../models/movie';
     ])
   ]
 })
-export class SliderComponent implements OnInit ,AfterViewInit{
+export class SliderComponent implements OnInit {
   @Input() items:Movie[] = [];
-  currentIndex = 0 ; 
+  currentIndex:number = 0 ; 
   constructor() { }
   ngOnInit(): void {
-    console.log(this.items);
-    // this.makeDelay();
-  }
-  ngAfterViewInit():void{
-    console.log('after',this.items);
+    this.RunSlider();
   }
 
-  // makeDelay(){
-  //   while(true){
-  //     setTimeout(()=>{
-  //       this.currentIndex++;
-  //       this.currentIndex%=20; 
-  //       console.log(this.currentIndex); 
-  //     },2000)
-  //   }
-  // }
+  RunSlider():void{
+    setInterval(()=>{
+      this.currentIndex = ++this.currentIndex%this.items.length;
+    },3000);
+  }
 
 }

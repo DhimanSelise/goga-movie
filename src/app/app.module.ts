@@ -15,6 +15,8 @@ import { GenresComponent } from './genres/genres.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SliderComponent } from './components/slider/slider.component';
 import {MatIconModule} from '@angular/material/icon';
+import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
+import { MovieItemComponent } from './components/movie-item/movie-item.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import {MatIconModule} from '@angular/material/icon';
     TvShowsComponent,
     GenresComponent,
     SliderComponent,
+    ItemsBannerComponent,
+    MovieItemComponent,
   ],
   imports: [
     BrowserModule,
