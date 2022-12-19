@@ -1,13 +1,25 @@
 <div fxLayout="row" fxFlex="100" class="header">
-  <div fxFlex="20" fxLayout="column" fxLayoutAlign="center center" class="logo">
+  <div
+    fxFlex="20"
+    fxFlex.lt-lg="50"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="logo"
+  >
     <img src="./../../assets/img/logo.png" alt="" />
   </div>
-  <div fxFlex="40" class="nav">
-    <ul fxLayout="row" fxLayoutAlign="space-around center">
-      <li><a href="home">Home</a></li>
-      <li><a href="movies">Movies</a></li>
-      <li><a href="tv-shows">TV Shows</a></li>
-      <li><a href="genres">Genres</a></li>
+  <div fxFlex="75" fxFlex.lt-lg="50" class="nav">
+    <ul
+      fxLayoutGap="20"
+      fxLayoutGap.lt-lg="10"
+      fxLayout="row"
+      fxLayoutAlign="end center"
+      fxFlex="100"
+    >
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/movies">Movies</a></li>
+      <li><a routerLink="/tv-shows">TV Shows</a></li>
+      <li><a routerLink="/genres">Genres</a></li>
     </ul>
   </div>
 </div>
