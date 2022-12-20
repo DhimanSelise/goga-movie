@@ -6,12 +6,7 @@ import { Movie } from 'src/app/models/movie';
   templateUrl: './items-banner.component.html',
   styleUrls: ['./items-banner.component.scss']
 })
-export class ItemsBannerComponent implements OnInit {
+export class ItemsBannerComponent {
   @Input() items:Movie[]=[];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  @Input() movieType:string | null = null;
 }

@@ -11,8 +11,8 @@ export class MoviesService {
 
   constructor(private http:HttpClient) { }
 
-  getMovies(){
-    return this.http.get(this.baseUrl+'/movie/upcoming'+this.APIKey); 
+  getMovies(type:string){
+    return this.http.get(this.baseUrl+'/movie/'+type+this.APIKey); 
   }
 
   // Helper fucntion

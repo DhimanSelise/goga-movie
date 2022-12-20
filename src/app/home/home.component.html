@@ -1,2 +1,13 @@
 <app-slider [items]="movies"></app-slider>
-<app-items-banner [items]="movies"></app-items-banner>
+<app-items-banner
+  movieType="Up Comming Movie"
+  [items]="upcomingMovies"
+></app-items-banner>
+<app-items-banner
+  movieType="Now Playing"
+  [items]="nowPlayingMovies"
+></app-items-banner>
+<app-items-banner
+  movieType="Top Rated Movies"
+  [items]="topRatedMovies"
+></app-items-banner>

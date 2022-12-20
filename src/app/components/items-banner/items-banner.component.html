@@ -1,11 +1,21 @@
 <div fxFlex="100" fxLayout="column" fxLayoutAlign="start" class="container">
-  <h2>Up Comming Movie</h2>
-  <div *ngFor="let item of items"
+  <h2 *ngIf="movieType">
+    {{ movieType }}
+  </h2>
+  <div
     fxFlex="100"
     class="movie-list"
     fxLayout="row wrap"
     fxLayoutAlign="space-between start"
   >
-    <app-movie-item [item]="item" fxFlex.lt-lg="49" fxFlex="19"></app-movie-item>
+    <ng-container *ngFor="let item of items; let i = index">
+      <app-movie-item
+        style="padding: 5px"
+        *ngIf="i < 12"
+        [item]="item"
+        [fxFlex.lt-lg]="100 / 2"
+        [fxFlex]="100 / 6"
+      ></app-movie-item>
+    </ng-container>
   </div>
 </div>

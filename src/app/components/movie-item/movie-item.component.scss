@@ -13,11 +13,17 @@
 .rating{
     position: absolute;
     top: 5%;
-    background: gray;
-    padding: 3px 8px;
+    background: rgba(3, 3, 3,0.5);
+    padding: 0px 2px;
     left: 5%;
+    border-radius: 5px;
+    height: 20px;
+    &-icon{
+        top: 3px;
+        position: relative;
+    }
     &-text{
-        font-size: medium;
+        font-size: small;
     }
 }
 .movie-title{
@@ -26,6 +32,10 @@
     display: block;
     overflow: hidden;
     padding: 5px;
+}
+
+.material-icons{
+    font-size: small;
 }
 // .myIcon{
 //     position:relative ;
