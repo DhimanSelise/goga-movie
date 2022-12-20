@@ -7,10 +7,15 @@
         alt=""
       />
     </div>
-    <div class="raitng">
-      <span>star</span>
-      <span>7.8/10</span>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="rating">
+      <span class="rating-icon">
+        <mat-icon  fontIcon="star"></mat-icon>
+      </span>
+      <span class="rating-text">7.8/10</span>
     </div>
   </div>
-  <div class="movie-title">Kung Fu Panda</div>
+  <div class="movie-title">
+    {{item?.title
+    }}
+  </div>
 </a>

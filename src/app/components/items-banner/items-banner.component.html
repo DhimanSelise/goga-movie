@@ -1,20 +1,11 @@
 <div fxFlex="100" fxLayout="column" fxLayoutAlign="start" class="container">
   <h2>Up Comming Movie</h2>
-  <div
+  <div *ngFor="let item of items"
     fxFlex="100"
     class="movie-list"
     fxLayout="row wrap"
     fxLayoutAlign="space-between start"
   >
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
-    <app-movie-item fxFlex="19"></app-movie-item>
+    <app-movie-item [item]="item" fxFlex.lt-lg="49" fxFlex="19"></app-movie-item>
   </div>
 </div>

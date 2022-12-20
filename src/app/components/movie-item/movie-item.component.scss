@@ -2,3 +2,39 @@
     text-decoration: none;
     color: bisque;
 }
+
+.Image-and-rating{
+    position: relative;
+}
+
+.image{
+    position: relative;
+}
+.rating{
+    position: absolute;
+    top: 5%;
+    background: gray;
+    padding: 3px 8px;
+    left: 5%;
+    &-text{
+        font-size: medium;
+    }
+}
+.movie-title{
+    height: 38px;
+    font-size: medium;
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+}
+// .myIcon{
+//     position:relative ;
+//     top: 0px;
+//     left: 0px;
+
+// }
+
+a{
+    border: 1px solid pink;
+    box-shadow: 2px seashell;
+}
