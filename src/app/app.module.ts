@@ -15,8 +15,10 @@ import { GenresComponent } from './genres/genres.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SliderComponent } from './components/slider/slider.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
 import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
+import { SingleMovieComponent } from './single-movie/single-movie.component';
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
     SliderComponent,
     ItemsBannerComponent,
     MovieItemComponent,
+    SingleMovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

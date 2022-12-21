@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,11 @@ export class MoviesService {
   constructor(private http:HttpClient) { }
 
   getMovies(type:string){
-    return this.http.get(this.baseUrl+'/movie/'+type+this.APIKey); 
+    return this.http.get(this.baseUrl+'/movie/'+type+this.APIKey).pipe(
+      map((response:any)=>{
+        return response.results;
+      })
+    )
   }
 
   // Helper fucntion

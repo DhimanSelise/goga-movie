@@ -2,8 +2,11 @@
     height: 100px;
     background-color: #212121;
     .logo{
-        img{
+        a{
             height: 80%;
+            img{
+                height: 100%;
+            }
         }
     }
     .nav{

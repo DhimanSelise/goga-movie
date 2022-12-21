@@ -16,7 +16,13 @@
         <div ngStyle.lt-lg="font-size: 1.0rem" class="meta">
           <div class="info">
             <span class="rating">
-              <span> <mat-icon class="icon-style">star</mat-icon> </span>
+              <span
+                style="position: relative; margin: 5px; top: 3px"
+                ngStyle.lt-lg="position: relative; margin: 5px; top: 5px"
+                class="matIcon"
+              >
+                <mat-icon class="icon-style">star</mat-icon>
+              </span>
               <span class="rating-value">{{
                 item.vote_average === 0 ? "Unrated" : item.vote_average
               }}</span>
