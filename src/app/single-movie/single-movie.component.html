@@ -2,23 +2,28 @@
   <img
     src="https://image.tmdb.org/t/p/original/Yc9q6QuWrMp9nuDm5R8ExNqbEq.jpg"
     alt=""
-    height="100%"
-    width="100%"
+    width="50%"
   />
 </section>
 
 <section class="myTab">
   <mat-tab-group mat-stretch-tabs="false">
     <mat-tab label="Overview">
-      <div fxFlex="100" class="overview-area">
-        <div fxFlex="40" class="image">
+      <div
+        fxFlex="100"
+        fxLayout="row"
+        fxLayout.lt-md="column"
+        fxLayoutAlign="space-between start"
+        class="overview-area"
+      >
+        <div fxFlex="20" fxFlex.lt-md="100" class="image">
           <img
             fxFlex="100"
-            src="https://image.tmdb.org/t/p/w342/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg"
+            src="https://image.tmdb.org/t/p/w342/ps2oKfhY6DL3alynlSqY97gHSsg.jpg"
             alt=""
           />
         </div>
-        <div fxFlex="60" class="meta">
+        <div fxFlex="75" fxFlex.lt-md="100" class="meta">
           <h2>Overview</h2>
           <p>
             Framed in the 1940s for the double murder of his wife and her lover,
@@ -29,29 +34,29 @@
             Red -- for his integrity and unquenchable sense of hope.
           </p>
           <div class="meta-data">
-            <table>
+            <table fxFlex="100">
               <tr>
-                <th>Release Date:</th>
+                <th fxFlex="20" fxFlex.lt-md="50">Release Date:</th>
                 <td>20.12.1974</td>
               </tr>
               <tr>
-                <th>Language:</th>
+                <th fxFlex="20" fxFlex.lt-md="50">Language:</th>
                 <td>EN</td>
               </tr>
               <tr>
-                <th>Revenue:</th>
+                <th fxFlex="20" fxFlex.lt-md="50">Revenue:</th>
                 <td>$102,600,000.0</td>
               </tr>
               <tr>
-                <th>Duration:</th>
+                <th fxFlex="20" fxFlex.lt-md="50">Duration:</th>
                 <td>202 min</td>
               </tr>
               <tr>
-                <th>Status:</th>
+                <th fxFlex="20" fxFlex.lt-md="50">Status:</th>
                 <td>Released</td>
               </tr>
               <tr>
-                <th>Genres:</th>
+                <th fxFlex="20" fxFlex.lt-md="50">Genres:</th>
                 <td>Drama Crime</td>
               </tr>
             </table>
@@ -59,8 +64,70 @@
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="Photos">Content 2</mat-tab>
-    <mat-tab label="Videos">Content 3</mat-tab>
+    <mat-tab label="Photos">
+      <div class="photo-area" fxFlex="100" fxLayout="row wrap">
+        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
+          <img
+            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+            alt=""
+            width="100%"
+          />
+        </div>
+        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
+          <img
+            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+            alt=""
+            width="100%"
+          />
+        </div>
+        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
+          <img
+            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+            alt=""
+            width="100%"
+          />
+        </div>
+        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
+          <img
+            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+            alt=""
+            width="100%"
+          />
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Videos">
+      <div class="photo-area" fxFlex="100" fxLayout="row wrap">
+        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
+          <img
+            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+            alt=""
+            width="100%"
+          />
+        </div>
+        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
+          <img
+            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+            alt=""
+            width="100%"
+          />
+        </div>
+        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
+          <img
+            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+            alt=""
+            width="100%"
+          />
+        </div>
+        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
+          <img
+            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+            alt=""
+            width="100%"
+          />
+        </div>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </section>
 <p>single-movie works!</p>

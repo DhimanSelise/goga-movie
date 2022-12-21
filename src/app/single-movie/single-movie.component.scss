@@ -4,6 +4,8 @@
 
 
 .myTab{
+    margin-top: 20px;
+    border: 5px solid pink;
     .mat-tab-label{
         color: yellow;
     }
@@ -14,13 +16,49 @@
 }
 
 
-.Overview{
-    &-area{
-        .image{
-            object-fit: cover;
-            img{
-                width: 100%;
+.overview-area{
+    margin-top: 15px;
+    .image{
+        padding: 10px;
+        object-fit: cover;
+        border: 5px solid red;
+        img{
+            width: 100%;
+            padding: 5px;
+            align-items: center;
+            text-align: center;
+            border: 3px solid;
+        }
+    }
+    .meta{
+        padding: 10px;
+        h2{
+            margin-top: 10px;
+        }
+        p{
+            font-size: medium;
+        }
+
+        &-data{
+            table{
+                font-size: medium;
+                line-height: 26px;
+                margin-top: 10px;
+                tr{
+                    th{
+                        text-align: left;
+                    }
+                    td{
+                        text-align: left;
+                    }
+                }
             }
         }
+    }
+}
+
+.photo-area{
+    .single-photo{
+        padding: 5px;
     }
 }
