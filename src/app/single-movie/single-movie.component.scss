@@ -12,3 +12,15 @@
         align-self: center;
     }
 }
+
+
+.Overview{
+    &-area{
+        .image{
+            object-fit: cover;
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
