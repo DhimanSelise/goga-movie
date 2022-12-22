@@ -28,7 +28,7 @@ export class SliderComponent implements OnInit {
   RunSlider():void{
     setInterval(()=>{
       this.currentIndex = ++this.currentIndex%this.items.length;
-    },200000);
+    },3500);
   }
 
 }
