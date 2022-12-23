@@ -19,6 +19,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { SingleMovieComponent } from './single-movie/single-movie.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { SingleMovieComponent } from './single-movie/single-movie.component';
     ItemsBannerComponent,
     MovieItemComponent,
     SingleMovieComponent,
+    CalculatorComponent,
   ],
   imports: [
     BrowserModule,

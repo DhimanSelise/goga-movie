@@ -1,0 +1,38 @@
+<div class="calculator">
+    <form action="#" name="form">
+        <div class="result">
+            <input type="text" [value]="value" name="disp" id="disp" />
+        </div>
+        <div class="btn">
+            <div class="row">
+                <input type="button" value="AC" (click)="DeleteMe()" />
+                <input type="button" value="(" (click)="calculator('(')" />
+                <input type="button" value=")" (click)="calculator(')')" />
+            </div>
+            <div class="row">
+                <input type="button" value="7" (click)="calculator('7')" />
+                <input type="button" value="8" (click)="calculator('8')" />
+                <input type="button" value="9" (click)="calculator('9')" />
+                <input type="button" value="+" (click)="calculator('+')" />
+            </div>
+            <div class="row">
+                <input type="button" value="4" (click)="calculator('4')" />
+                <input type="button" value="5" (click)="calculator('5')" />
+                <input type="button" value="6" (click)="calculator('6')" />
+                <input type="button" value="-" (click)="calculator('-')" />
+            </div>
+            <div class="row">
+                <input type="button" value="1" (click)="calculator('1')" />
+                <input type="button" value="2" (click)="calculator('2')" />
+                <input type="button" value="3" (click)="calculator('3')" />
+                <input type="button" value="*" (click)="calculator('*')" />
+            </div>
+            <div class="row">
+                <input type="button" value="0" (click)="calculator('0')" />
+                <input type="button" value="." (click)="calculator('.')" />
+                <input type="button" value="/" (click)="calculator('/')" />
+                <input type="button" value="=" (click)="Answere()" />
+            </div>
+        </div>
+    </form>
+</div>

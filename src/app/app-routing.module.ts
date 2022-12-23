@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CalculatorComponent } from './calculator/calculator.component';
 import { GenresComponent } from './genres/genres.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'tv-shows', component: TvShowsComponent} , 
   {path:'genres', component: GenresComponent},
   {path:'movie/single', component: SingleMovieComponent},
+  {path:'calc', component: CalculatorComponent},
   {path:'**', redirectTo:''} // for 404 or any other path : redirect to ROOT
 ];
 
