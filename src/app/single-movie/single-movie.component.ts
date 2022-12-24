@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
-import { Movie, SingleMovie } from '../models/movie';
+import { Movie, SingleMovie, Video } from '../models/movie';
 import { MoviesService } from '../services/movies.service';
 
 @Component({
@@ -13,6 +13,8 @@ import { MoviesService } from '../services/movies.service';
 export class SingleMovieComponent implements OnInit {
 
   item:SingleMovie | null = null;
+  videos: Video[] = [];
+
   constructor(private route: ActivatedRoute, private movieServie:MoviesService) { }
   
   ngOnInit(): void {
@@ -20,7 +22,11 @@ export class SingleMovieComponent implements OnInit {
       console.log(id) ; 
       this.movieServie.getMovie(id).subscribe(movieData=>{
         this.item = movieData;
-      })
+      }) ; 
+
+      this.movieServie.getVideos(id).subscribe(videoData=>{
+        this.videos = videoData;
+      }) ; 
     });
   }
 

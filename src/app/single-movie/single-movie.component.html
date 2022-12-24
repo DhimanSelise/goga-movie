@@ -1,128 +1,152 @@
 <section *ngIf="item">
-  <img
-    [src]="'https://image.tmdb.org/t/p/original/'+item.backdrop_path"
-    alt=""
-    width="50%"
-  />
+    <img
+        [src]="'https://image.tmdb.org/t/p/original/' + item.backdrop_path"
+        alt=""
+        width="50%"
+    />
 </section>
 
 <section class="myTab" *ngIf="item">
-  <mat-tab-group mat-stretch-tabs="false">
-    <mat-tab label="Overview">
-      <div
-        fxFlex="100"
-        fxLayout="row"
-        fxLayout.lt-md="column"
-        fxLayoutAlign="space-between start"
-        class="overview-area"
-      >
-        <div fxFlex="20" fxFlex.lt-md="100" class="image">
-          <img
-            fxFlex="100"
-            [src]="'https://image.tmdb.org/t/p/w342/'+item.poster_path"
-            alt=""
-          />
-        </div>
-        <div fxFlex="75" fxFlex.lt-md="100" class="meta">
-          <h2>Overview</h2>
-          <p>
-            {{item.overview}}
-          </p>
-          <div class="meta-data">
-            <table fxFlex="100">
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Release Date</th>
-                <td>{{item.release_date}}</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Language:</th>
-                <td>{{item.original_language | uppercase}}</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Revenue:</th>
-                <td>{{item.revenue | currency}}</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Duration:</th>
-                <td>{{item.runtime}} mins</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Status:</th>
-                <td>{{item.status}} </td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Genres:</th>
-                <td class="genres" *ngFor="let genre of item.genres">{{genre.name}}</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </mat-tab>
-    <mat-tab label="Photos">
-      <div class="photo-area" fxFlex="100" fxLayout="row wrap">
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-      </div>
-    </mat-tab>
-    <mat-tab label="Videos">
-      <div class="photo-area" fxFlex="100" fxLayout="row wrap">
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-      </div>
-    </mat-tab>
-  </mat-tab-group>
+    <mat-tab-group mat-stretch-tabs="false">
+        <mat-tab label="Overview">
+            <div
+                fxFlex="100"
+                fxLayout="row"
+                fxLayout.lt-md="column"
+                fxLayoutAlign="space-between start"
+                class="overview-area"
+            >
+                <div fxFlex="20" fxFlex.lt-md="100" class="image">
+                    <img
+                        fxFlex="100"
+                        [src]="
+                            'https://image.tmdb.org/t/p/w342/' +
+                            item.poster_path
+                        "
+                        alt=""
+                    />
+                </div>
+                <div fxFlex="75" fxFlex.lt-md="100" class="meta">
+                    <h2>Overview</h2>
+                    <p>
+                        {{ item.overview }}
+                    </p>
+                    <div class="meta-data">
+                        <table fxFlex="100">
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">
+                                    Release Date
+                                </th>
+                                <td>{{ item.release_date }}</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Language:</th>
+                                <td>
+                                    {{ item.original_language | uppercase }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Budget:</th>
+                                <td>{{ item.budget | currency }}</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Revenue:</th>
+                                <td>{{ item.revenue | currency }}</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Duration:</th>
+                                <td>{{ item.runtime }} mins</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Status:</th>
+                                <td>{{ item.status }}</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Genres:</th>
+                                <td>
+                                    <span
+                                        class="genres"
+                                        *ngFor="let genre of item.genres"
+                                        >{{ genre.name }}</span
+                                    >
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Photos">
+            <div class="photo-area" fxFlex="100" fxLayout="row wrap">
+                <div
+                    [fxFlex]="100 / 3"
+                    [fxFlex.lt-lg]="100 / 2"
+                    class="single-photo"
+                >
+                    <img
+                        src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+                        alt=""
+                        width="100%"
+                    />
+                </div>
+                <div
+                    [fxFlex]="100 / 3"
+                    [fxFlex.lt-lg]="100 / 2"
+                    class="single-photo"
+                >
+                    <img
+                        src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+                        alt=""
+                        width="100%"
+                    />
+                </div>
+                <div
+                    [fxFlex]="100 / 3"
+                    [fxFlex.lt-lg]="100 / 2"
+                    class="single-photo"
+                >
+                    <img
+                        src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+                        alt=""
+                        width="100%"
+                    />
+                </div>
+                <div
+                    [fxFlex]="100 / 3"
+                    [fxFlex.lt-lg]="100 / 2"
+                    class="single-photo"
+                >
+                    <img
+                        src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
+                        alt=""
+                        width="100%"
+                    />
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Videos">
+            <div class="photo-area" fxFlex="100" fxLayout="row wrap">
+                <div
+                    *ngFor="let video of videos"
+                    [fxFlex]="100 / 3"
+                    [fxFlex.lt-lg]="100 / 2"
+                    class="single-photo"
+                >
+                    <ng-container *ngIf="video.site == 'YouTube'">
+                        <pre>{{ video | json }}</pre>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/ZcO8PYFTBAs"
+                            title="হরয যওয হর - Gopal Bhar - Best Of 2021 - Full Episode"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </ng-container>
+                </div>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
 </section>
 <p>single-movie works!</p>

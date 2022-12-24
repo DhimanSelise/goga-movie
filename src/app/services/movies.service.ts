@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { map } from 'rxjs';
-import { Movie, SingleMovie } from '../models/movie';
+import { Movie, SingleMovie, Video, Videos } from '../models/movie';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,14 @@ export class MoviesService {
 
   getMovie(id:string){
     return this.http.get<SingleMovie>(this.baseUrl+'/movie/'+id+this.APIKey)
+  }
+
+  getVideos(id:string){
+    return this.http.get<Video[]>(this.baseUrl+'/movie/'+id+'/videos'+this.APIKey).pipe(
+      map((response:any)=>{
+        return response.results;
+      })
+    )
   }
 
   // Helper fucntion
