@@ -1,5 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
+import { Movie, SingleMovie } from '../models/movie';
+import { MoviesService } from '../services/movies.service';
 
 @Component({
   selector: 'app-single-movie',
@@ -9,12 +12,15 @@ import {ActivatedRoute} from '@angular/router'
 })
 export class SingleMovieComponent implements OnInit {
 
-
-  constructor(private route: ActivatedRoute) { }
-
+  item:SingleMovie | null = null;
+  constructor(private route: ActivatedRoute, private movieServie:MoviesService) { }
+  
   ngOnInit(): void {
     this.route.params.subscribe(({id})=>{
       console.log(id) ; 
+      this.movieServie.getMovie(id).subscribe(movieData=>{
+        this.item = movieData;
+      })
     });
   }
 

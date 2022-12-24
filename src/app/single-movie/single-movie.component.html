@@ -1,12 +1,12 @@
-<section>
+<section *ngIf="item">
   <img
-    src="https://image.tmdb.org/t/p/original/Yc9q6QuWrMp9nuDm5R8ExNqbEq.jpg"
+    [src]="'https://image.tmdb.org/t/p/original/'+item.backdrop_path"
     alt=""
     width="50%"
   />
 </section>
 
-<section class="myTab">
+<section class="myTab" *ngIf="item">
   <mat-tab-group mat-stretch-tabs="false">
     <mat-tab label="Overview">
       <div
@@ -19,45 +19,40 @@
         <div fxFlex="20" fxFlex.lt-md="100" class="image">
           <img
             fxFlex="100"
-            src="https://image.tmdb.org/t/p/w342/ps2oKfhY6DL3alynlSqY97gHSsg.jpg"
+            [src]="'https://image.tmdb.org/t/p/w342/'+item.poster_path"
             alt=""
           />
         </div>
         <div fxFlex="75" fxFlex.lt-md="100" class="meta">
           <h2>Overview</h2>
           <p>
-            Framed in the 1940s for the double murder of his wife and her lover,
-            upstanding banker Andy Dufresne begins a new life at the Shawshank
-            prison, where he puts his accounting skills to work for an amoral
-            warden. During his long stretch in prison, Dufresne comes to be
-            admired by the other inmates -- including an older prisoner named
-            Red -- for his integrity and unquenchable sense of hope.
+            {{item.overview}}
           </p>
           <div class="meta-data">
             <table fxFlex="100">
               <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Release Date:</th>
-                <td>20.12.1974</td>
+                <th fxFlex="20" fxFlex.lt-md="50">Release Date</th>
+                <td>{{item.release_date}}</td>
               </tr>
               <tr>
                 <th fxFlex="20" fxFlex.lt-md="50">Language:</th>
-                <td>EN</td>
+                <td>{{item.original_language | uppercase}}</td>
               </tr>
               <tr>
                 <th fxFlex="20" fxFlex.lt-md="50">Revenue:</th>
-                <td>$102,600,000.0</td>
+                <td>{{item.revenue | currency}}</td>
               </tr>
               <tr>
                 <th fxFlex="20" fxFlex.lt-md="50">Duration:</th>
-                <td>202 min</td>
+                <td>{{item.runtime}} mins</td>
               </tr>
               <tr>
                 <th fxFlex="20" fxFlex.lt-md="50">Status:</th>
-                <td>Released</td>
+                <td>{{item.status}} </td>
               </tr>
               <tr>
                 <th fxFlex="20" fxFlex.lt-md="50">Genres:</th>
-                <td>Drama Crime</td>
+                <td class="genres" *ngFor="let genre of item.genres">{{genre.name}}</td>
               </tr>
             </table>
           </div>
