@@ -14,6 +14,7 @@ export class SingleMovieComponent implements OnInit {
   item:SingleMovie | null = null;
   videos: Video[] = [];
   photos:Photos | null = null;
+  similarMovies:Movie[]=[];
 
   constructor(private route: ActivatedRoute, private movieServie:MoviesService ) { }
   
@@ -30,6 +31,10 @@ export class SingleMovieComponent implements OnInit {
 
       this.movieServie.getPhotos(id).subscribe((photoData:Photos)=>{
         this.photos = photoData;
+      })
+
+      this.movieServie.getSimilarMovies(id).subscribe((data)=>{
+        this.similarMovies = data;
       })
     });
   }

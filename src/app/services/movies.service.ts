@@ -37,5 +37,13 @@ export class MoviesService {
     return this.http.get<Photos>(this.baseUrl+'/movie/'+id+'/images'+this.APIKey);
   }
 
+  getSimilarMovies(id:string){
+    return this.http.get<Movie[]>(this.baseUrl+'/movie/'+id+'/similar'+this.APIKey).pipe(
+      map((response:any)=>{
+        return response.results;
+      })
+    )
+  }
+
   // Helper fucntion
 }
