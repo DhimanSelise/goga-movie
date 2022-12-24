@@ -1,12 +1,15 @@
 .mat-tab-group {
   margin-bottom: 48px;
 }
-
+.mat-tab-label {
+    padding: 0px 0px;
+}
 
 .myTab{
     margin-top: 20px;
     .mat-tab-label{
         color: yellow;
+        padding: 0px 0px;
     }
     
     mat-tab-header {
@@ -58,6 +61,7 @@
 .photo-area{
     .single-photo{
         padding: 5px;
+        width: 100%;
     }
 }
 

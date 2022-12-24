@@ -76,77 +76,32 @@
                 </div>
             </div>
         </mat-tab>
-        <mat-tab label="Photos">
-            <div class="photo-area" fxFlex="100" fxLayout="row wrap">
-                <div
-                    [fxFlex]="100 / 3"
-                    [fxFlex.lt-lg]="100 / 2"
-                    class="single-photo"
-                >
-                    <img
-                        src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-                        alt=""
-                        width="100%"
-                    />
-                </div>
-                <div
-                    [fxFlex]="100 / 3"
-                    [fxFlex.lt-lg]="100 / 2"
-                    class="single-photo"
-                >
-                    <img
-                        src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-                        alt=""
-                        width="100%"
-                    />
-                </div>
-                <div
-                    [fxFlex]="100 / 3"
-                    [fxFlex.lt-lg]="100 / 2"
-                    class="single-photo"
-                >
-                    <img
-                        src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-                        alt=""
-                        width="100%"
-                    />
-                </div>
-                <div
-                    [fxFlex]="100 / 3"
-                    [fxFlex.lt-lg]="100 / 2"
-                    class="single-photo"
-                >
-                    <img
-                        src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-                        alt=""
-                        width="100%"
-                    />
-                </div>
-            </div>
-        </mat-tab>
         <mat-tab label="Videos">
             <div class="photo-area" fxFlex="100" fxLayout="row wrap">
-                <div
-                    *ngFor="let video of videos"
-                    [fxFlex]="100 / 3"
-                    [fxFlex.lt-lg]="100 / 2"
-                    class="single-photo"
-                >
-                    <ng-container *ngIf="video.site == 'YouTube'">
-                        <pre>{{ video | json }}</pre>
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            src="https://www.youtube.com/embed/ZcO8PYFTBAs"
-                            title="হরয যওয হর - Gopal Bhar - Best Of 2021 - Full Episode"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                        ></iframe>
-                    </ng-container>
-                </div>
+                <ng-container *ngFor="let video of videos">
+                    <app-embed-video
+                        [fxFlex]="100 / 3"
+                        [fxFlex.md]="100 / 2"
+                        [fxFlex.lt-md]="100"
+                        class="single-photo"
+                        [key]="video.key"
+                        [site]="video.site"
+                    ></app-embed-video>
+                </ng-container>
             </div>
+        </mat-tab>
+        <mat-tab *ngIf="photos" label="Walpaper">
+            <app-image-galary
+                [imageDetails]="photos.backdrops"
+            ></app-image-galary>
+        </mat-tab>
+        <mat-tab *ngIf="photos" label="Posters">
+            <app-image-galary
+                [imageDetails]="photos.posters"
+            ></app-image-galary>
+        </mat-tab>
+        <mat-tab *ngIf="photos" label="Logos">
+            <app-image-galary [imageDetails]="photos.logos"></app-image-galary>
         </mat-tab>
     </mat-tab-group>
 </section>
-<p>single-movie works!</p>

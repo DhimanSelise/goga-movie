@@ -73,6 +73,8 @@ export interface SingleMovie {
     vote_count: number;
 }
 
+//------------- Videos ---------------------------
+
 export interface Video {
     iso_639_1: string;
     iso_3166_1: string;
@@ -89,4 +91,25 @@ export interface Video {
 export interface Videos {
     id: number;
     results: Video[];
+}
+
+
+
+//------- Images -----------
+
+export interface ImageDetails {
+    aspect_ratio: number;
+    height: number;
+    iso_639_1: string;
+    file_path: string;
+    vote_average: number;
+    vote_count: number;
+    width: number;
+}
+
+export interface Photos {
+    backdrops: ImageDetails[];
+    id: number;
+    logos: ImageDetails[];
+    posters: ImageDetails[];
 }

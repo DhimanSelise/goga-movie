@@ -20,7 +20,10 @@ import { ItemsBannerComponent } from './components/items-banner/items-banner.com
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { SingleMovieComponent } from './single-movie/single-movie.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-
+import { EmbedVideoComponent } from './single-movie/embed-video/embed-video.component';
+import {ImageModule} from 'primeng/image';
+import {AccordionModule} from 'primeng/accordion';
+import { ImageGalaryComponent } from './single-movie/image-galary/image-galary.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
     MovieItemComponent,
     SingleMovieComponent,
     CalculatorComponent,
+    EmbedVideoComponent,
+    ImageGalaryComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,10 @@ import { CalculatorComponent } from './calculator/calculator.component';
     FormsModule,
     HttpClientModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    ImageModule,
+    AccordionModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

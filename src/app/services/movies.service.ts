@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { map } from 'rxjs';
-import { Movie, SingleMovie, Video, Videos } from '../models/movie';
+import { Movie, Photos, SingleMovie, Video, Videos } from '../models/movie';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,10 @@ export class MoviesService {
         return response.results;
       })
     )
+  }
+
+  getPhotos(id:string){
+    return this.http.get<Photos>(this.baseUrl+'/movie/'+id+'/images'+this.APIKey);
   }
 
   // Helper fucntion
