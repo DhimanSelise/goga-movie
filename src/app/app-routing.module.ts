@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'movies', component: MoviesComponent} , 
   {path:'tv-shows', component: TvShowsComponent} , 
   {path:'genres', component: GenresComponent},
-  {path:'movie/single', component: SingleMovieComponent},
+  {path:'movie/:id', component: SingleMovieComponent},
   {path:'calc', component: CalculatorComponent},
   {path:'**', redirectTo:''} // for 404 or any other path : redirect to ROOT
 ];

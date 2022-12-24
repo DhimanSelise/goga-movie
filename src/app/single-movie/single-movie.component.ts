@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-single-movie',
@@ -8,9 +9,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class SingleMovieComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(({id})=>{
+      console.log(id) ; 
+    });
   }
 
 }
