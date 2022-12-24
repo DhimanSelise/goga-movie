@@ -64,11 +64,16 @@
                             <tr>
                                 <th fxFlex="20" fxFlex.lt-md="50">Genres:</th>
                                 <td>
-                                    <span
-                                        class="genres"
-                                        *ngFor="let genre of item.genres"
-                                        >{{ genre.name }}</span
+                                    <ng-container
+                                        *ngFor="
+                                            let genre of item.genres;
+                                            let ii = index
+                                        "
                                     >
+                                        <span *ngIf="ii < 3" class="genres">{{
+                                            genre.name
+                                        }}</span>
+                                    </ng-container>
                                 </td>
                             </tr>
                         </table>
