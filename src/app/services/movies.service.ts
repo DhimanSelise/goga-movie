@@ -21,6 +21,14 @@ export class MoviesService {
     )
   }
 
+  getPopularMoviesByPage(pageNo:number){
+    return this.http.get<Movie[]>(this.baseUrl+'/movie/popular'+this.APIKey+'&page='+pageNo).pipe(
+      map((response:any)=>{
+        return response.results;
+      })
+    )
+  }
+
   getMovie(id:string){
     return this.http.get<SingleMovie>(this.baseUrl+'/movie/'+id+this.APIKey)
   }

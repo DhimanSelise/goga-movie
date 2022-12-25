@@ -27,6 +27,9 @@ import { ImageGalaryComponent } from './single-movie/image-galary/image-galary.c
 import { CastsComponent } from './single-movie/casts/casts.component';
 import { CrewsComponent } from './single-movie/crews/crews.component';
 import {CarouselModule} from 'primeng/carousel';
+import {PaginatorModule} from 'primeng/paginator';
+
+
 
 @NgModule({
   declarations: [
@@ -58,7 +61,8 @@ import {CarouselModule} from 'primeng/carousel';
     MatTabsModule,
     ImageModule,
     AccordionModule,
-    CarouselModule
+    CarouselModule,
+    PaginatorModule
     
   ],
   providers: [],

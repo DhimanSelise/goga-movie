@@ -1,21 +1,22 @@
 <div fxFlex="100" fxLayout="column" fxLayoutAlign="start" class="container">
-  <h2 *ngIf="movieType">
-    {{ movieType }}
-  </h2>
-  <div
-    fxFlex="100"
-    class="movie-list"
-    fxLayout="row wrap"
-    fxLayoutAlign="space-between start"
-  >
-    <ng-container *ngFor="let item of items; let i = index">
-      <app-movie-item
-        style="padding: 5px"
-        *ngIf="i < 12"
-        [item]="item"
-        [fxFlex.lt-lg]="100 / 2"
-        [fxFlex]="100 / 6"
-      ></app-movie-item>
-    </ng-container>
-  </div>
+    <h2 *ngIf="movieType">
+        {{ movieType }}
+    </h2>
+    <div
+        fxFlex="100"
+        class="movie-list"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between start"
+    >
+        <ng-container *ngFor="let item of items; let i = index">
+            <app-movie-item
+                style="padding: 5px"
+                *ngIf="i < showableMovieNumber"
+                [item]="item"
+                [fxFlex.lt-md]="100 / 2"
+                [fxFlex.md]="100 / 4"
+                [fxFlex]="100 / numberOfMoviesInARow"
+            ></app-movie-item>
+        </ng-container>
+    </div>
 </div>
