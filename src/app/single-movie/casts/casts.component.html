@@ -1,6 +1,17 @@
 <h3>Casts</h3>
-<p-carousel [value]="casts" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
-    <ng-template let-car pTemplate="item">
-        Dhiman
+<p-carousel
+    [value]="casts"
+    [numVisible]="5"
+    [numScroll]="1"
+    [responsiveOptions]="responsiveOptions"
+>
+    <ng-template let-cast pTemplate="item">
+        <div>
+            <img
+                [src]="'https://image.tmdb.org/t/p/w342/' + cast.profile_path"
+                alt=""
+            />
+            <h3>{{ cast.name }}</h3>
+        </div>
     </ng-template>
 </p-carousel>
