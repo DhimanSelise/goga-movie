@@ -111,9 +111,17 @@
     </mat-tab-group>
 </section>
 
+<section class="casts" *ngIf="credits">
+    <app-casts [casts]="credits.cast"></app-casts>
+</section>
+<section class="crews">
+    <app-crews></app-crews>
+</section>
+
 <section>
     <app-items-banner
   movieType="Similar Movies"
   [items]="similarMovies"
-></app-items-banner>
+>
+    </app-items-banner>
 </section>

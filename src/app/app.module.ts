@@ -24,6 +24,9 @@ import { EmbedVideoComponent } from './single-movie/embed-video/embed-video.comp
 import {ImageModule} from 'primeng/image';
 import {AccordionModule} from 'primeng/accordion';
 import { ImageGalaryComponent } from './single-movie/image-galary/image-galary.component';
+import { CastsComponent } from './single-movie/casts/casts.component';
+import { CrewsComponent } from './single-movie/crews/crews.component';
+import {CarouselModule} from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { ImageGalaryComponent } from './single-movie/image-galary/image-galary.c
     CalculatorComponent,
     EmbedVideoComponent,
     ImageGalaryComponent,
+    CastsComponent,
+    CrewsComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +58,7 @@ import { ImageGalaryComponent } from './single-movie/image-galary/image-galary.c
     MatTabsModule,
     ImageModule,
     AccordionModule,
+    CarouselModule
     
   ],
   providers: [],
