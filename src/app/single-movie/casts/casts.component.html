@@ -8,7 +8,11 @@
     <ng-template let-cast pTemplate="item">
         <div>
             <img
-                [src]="'https://image.tmdb.org/t/p/w342/' + cast.profile_path"
+                [src]="
+                    cast.profile_path
+                        ? 'https://image.tmdb.org/t/p/w342/' + cast.profile_path
+                        : './../../../assets/img/dumy-pp1.png'
+                "
                 alt=""
             />
             <h3>{{ cast.name }}</h3>

@@ -8,7 +8,11 @@
     <ng-template let-crew pTemplate="item">
         <div>
             <img
-                [src]="'https://image.tmdb.org/t/p/w342/' + crew.profile_path"
+                [src]="
+                    crew.profile_path
+                        ? 'https://image.tmdb.org/t/p/w342/' + crew.profile_path
+                        : './../../../assets/img/dumy-pp1.png'
+                "
                 alt=""
             />
             <h3>
