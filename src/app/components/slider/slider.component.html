@@ -1,42 +1,57 @@
 <div class="slider">
-  <ng-container *ngFor="let item of items; let i = index">
-    <div *ngIf="i === currentIndex" class="slide" @slideFade>
-      <div class="slide-bg">
-        <img
-          class="slide-bg-image"
-          fxFlex="100"
-          [src]="'https://image.tmdb.org/t/p/original' + item.backdrop_path"
-          alt=""
-        />
-      </div>
-      <div [ngStyle.lt-lg]="'width: 75%;'" class="slide-pane">
-        <h2 ngStyle.lt-lg="font-size: 1.8rem" class="name">{{ item.title }}</h2>
-        <br />
+    <ng-container *ngFor="let item of items; let i = index">
+        <div *ngIf="i === currentIndex" class="slide" @slideFade>
+            <div class="slide-bg">
+                <img
+                    class="slide-bg-image"
+                    fxFlex="100"
+                    [src]="
+                        'https://image.tmdb.org/t/p/original' +
+                        item.backdrop_path
+                    "
+                    alt=""
+                />
+            </div>
+            <div [ngStyle.lt-lg]="'width: 75%;'" class="slide-pane">
+                <h2 ngStyle.lt-lg="font-size: 1.8rem" class="name">
+                    {{ item.title }}
+                </h2>
+                <br />
 
-        <div ngStyle.lt-lg="font-size: 1.0rem" class="meta">
-          <div class="info">
-            <span class="rating">
-              <span
-                style="position: relative; margin: 5px; top: 3px"
-                ngStyle.lt-lg="position: relative; margin: 5px; top: 5px"
-                class="matIcon"
-              >
-                <mat-icon class="icon-style">star</mat-icon>
-              </span>
-              <span class="rating-value">{{
-                item.vote_average === 0 ? "Unrated" : item.vote_average
-              }}</span>
-              <span *ngIf="item.vote_average !== 0">/10</span>
-            </span>
-            <span class="review">{{ item.vote_count }} Reviews</span>
-            <span class="date">{{ item.release_date | date : "YYYY" }}</span>
-          </div>
-          <br />
-          <div ngStyle.lt-lg="font-size: 0.8rem" class="desc">
-            {{ item.overview }}
-          </div>
+                <div ngStyle.lt-lg="font-size: 1.0rem" class="meta">
+                    <div class="info">
+                        <span class="rating">
+                            <span
+                                style="
+                                    position: relative;
+                                    margin: 5px;
+                                    top: 3px;
+                                "
+                                ngStyle.lt-lg="position: relative; margin: 5px; top: 5px"
+                                class="matIcon"
+                            >
+                                <mat-icon class="icon-style">star</mat-icon>
+                            </span>
+                            <span class="rating-value">{{
+                                item.vote_average === 0
+                                    ? "Unrated"
+                                    : item.vote_average
+                            }}</span>
+                            <span *ngIf="item.vote_average !== 0">/10</span>
+                        </span>
+                        <span class="review"
+                            >{{ item.vote_count }} Reviews</span
+                        >
+                        <span class="date">{{
+                            item.release_date | date : "YYYY"
+                        }}</span>
+                    </div>
+                    <br />
+                    <div ngStyle.lt-lg="font-size: 0.8rem" class="desc">
+                        {{ item.overview }}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </ng-container>
+    </ng-container>
 </div>

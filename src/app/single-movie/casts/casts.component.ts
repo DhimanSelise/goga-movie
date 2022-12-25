@@ -12,7 +12,7 @@ export class CastsComponent implements OnInit {
   constructor() { 
     this.responsiveOptions = [
       {
-          breakpoint: '1024px',
+          breakpoint: '960px',
           numVisible: 3,
           numScroll: 3
       },
@@ -26,7 +26,7 @@ export class CastsComponent implements OnInit {
           numVisible: 1,
           numScroll: 1
       }
-  ];
+    ];
   }
 
   ngOnInit(): void {

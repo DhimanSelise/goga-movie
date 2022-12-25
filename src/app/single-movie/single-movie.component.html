@@ -1,10 +1,6 @@
-<section *ngIf="item">
-    <img
-        [src]="'https://image.tmdb.org/t/p/original/' + item.backdrop_path"
-        alt=""
-        width="50%"
-    />
-</section>
+<ng-container *ngIf="item">
+    <app-slider [items]="[item]"></app-slider>
+</ng-container>
 
 <section class="myTab" *ngIf="item">
     <mat-tab-group mat-stretch-tabs="false">
@@ -114,14 +110,11 @@
 <section class="casts" *ngIf="credits">
     <app-casts [casts]="credits.cast"></app-casts>
 </section>
-<section class="crews">
-    <app-crews></app-crews>
+<section class="crews" *ngIf="credits">
+    <app-crews [crews]="credits.crew"></app-crews>
 </section>
 
 <section>
-    <app-items-banner
-  movieType="Similar Movies"
-  [items]="similarMovies"
->
+    <app-items-banner movieType="Similar Movies" [items]="similarMovies">
     </app-items-banner>
 </section>

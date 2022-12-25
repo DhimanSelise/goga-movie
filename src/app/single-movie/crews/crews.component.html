@@ -1,1 +1,20 @@
-<p>crews works!</p>
+<h2>Crews</h2>
+<p-carousel
+    [value]="crews"
+    [numVisible]="5"
+    [numScroll]="1"
+    [responsiveOptions]="responsiveOptions"
+>
+    <ng-template let-crew pTemplate="item">
+        <div>
+            <img
+                [src]="'https://image.tmdb.org/t/p/w342/' + crew.profile_path"
+                alt=""
+            />
+            <h3>
+                {{ crew.name }}
+                <span>{{ crew.job }}</span>
+            </h3>
+        </div>
+    </ng-template>
+</p-carousel>
