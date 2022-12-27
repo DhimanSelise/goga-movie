@@ -28,6 +28,7 @@ import { CastsComponent } from './single-movie/casts/casts.component';
 import { CrewsComponent } from './single-movie/crews/crews.component';
 import {CarouselModule} from 'primeng/carousel';
 import {PaginatorModule} from 'primeng/paginator';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -62,7 +63,8 @@ import {PaginatorModule} from 'primeng/paginator';
     ImageModule,
     AccordionModule,
     CarouselModule,
-    PaginatorModule
+    PaginatorModule,
+    InputTextModule
     
   ],
   providers: [],

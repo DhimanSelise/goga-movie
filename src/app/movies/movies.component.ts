@@ -9,14 +9,24 @@ import { MoviesService } from '../services/movies.service';
 })
 export class MoviesComponent implements OnInit {
   popularMovies:Movie[]=[];
+  SearchValue:string="";
   constructor(private movieService:MoviesService) {
     
   }
 
   ngOnInit(): void {
-    this.movieService.getPopularMoviesByPage(1).subscribe((data:Movie[])=>{
+    this.getMoviesByPagination(1);
+  }
+  getMoviesByPagination(pageNo:number){
+    this.movieService.getPopularMoviesByPage(pageNo).subscribe((data:Movie[])=>{
       this.popularMovies = data;
     })
+  }
+  paginate(event:any){
+    this.getMoviesByPagination(event.page+1);
+  }
+  makeSearch(){
+    console.log(this.SearchValue) ; 
   }
 
 }
