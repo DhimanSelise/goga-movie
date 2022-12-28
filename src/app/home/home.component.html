@@ -1,13 +1,20 @@
 <app-slider [items]="movies"></app-slider>
 <app-items-banner
-  movieType="Up Comming Movie"
-  [items]="upcomingMovies"
+    movieType="Up Comming Movies"
+    [items]="upcomingMovies"
 ></app-items-banner>
 <app-items-banner
-  movieType="Now Playing"
-  [items]="nowPlayingMovies"
+    movieType="Now Playing"
+    [items]="nowPlayingMovies"
 ></app-items-banner>
 <app-items-banner
-  movieType="Top Rated Movies"
-  [items]="topRatedMovies"
+    movieType="Top Rated Movies"
+    [items]="topRatedMovies"
 ></app-items-banner>
+
+<app-items-tv-banner
+    tvShowType="Top Rated TV Shows"
+    [items]="top_ratedTvShows"
+    [showableMovieNumber]="12"
+    [numberOfMoviesInARow]="6"
+></app-items-tv-banner>

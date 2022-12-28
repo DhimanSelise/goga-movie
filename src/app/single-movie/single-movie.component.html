@@ -1,133 +1,125 @@
-<section>
-  <img
-    src="https://image.tmdb.org/t/p/original/Yc9q6QuWrMp9nuDm5R8ExNqbEq.jpg"
-    alt=""
-    width="50%"
-  />
+<ng-container *ngIf="item">
+    <app-slider [items]="[item]"></app-slider>
+</ng-container>
+
+<section class="myTab" *ngIf="item">
+    <mat-tab-group mat-stretch-tabs="false">
+        <mat-tab label="Overview">
+            <div
+                fxFlex="100"
+                fxLayout="row"
+                fxLayout.lt-md="column"
+                fxLayoutAlign="space-between start"
+                class="overview-area"
+            >
+                <div fxFlex="20" fxFlex.lt-md="100" class="image">
+                    <img
+                        fxFlex="100"
+                        [src]="
+                            'https://image.tmdb.org/t/p/w342/' +
+                            item.poster_path
+                        "
+                        alt=""
+                    />
+                </div>
+                <div fxFlex="75" fxFlex.lt-md="100" class="meta">
+                    <h2>Overview</h2>
+                    <p>
+                        {{ item.overview }}
+                    </p>
+                    <div class="meta-data">
+                        <table fxFlex="100">
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">
+                                    Release Date
+                                </th>
+                                <td>{{ item.release_date }}</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Language:</th>
+                                <td>
+                                    {{ item.original_language | uppercase }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Budget:</th>
+                                <td>{{ item.budget | currency }}</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Revenue:</th>
+                                <td>{{ item.revenue | currency }}</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Duration:</th>
+                                <td>{{ item.runtime }} mins</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Status:</th>
+                                <td>{{ item.status }}</td>
+                            </tr>
+                            <tr>
+                                <th fxFlex="20" fxFlex.lt-md="50">Genres:</th>
+                                <td>
+                                    <ng-container
+                                        *ngFor="
+                                            let genre of item.genres;
+                                            let ii = index
+                                        "
+                                    >
+                                        <span *ngIf="ii < 3" class="genres">{{
+                                            genre.name
+                                        }}</span>
+                                    </ng-container>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Videos">
+            <div class="photo-area" fxFlex="100" fxLayout="row wrap">
+                <ng-container *ngFor="let video of videos">
+                    <app-embed-video
+                        [fxFlex]="100 / 3"
+                        [fxFlex.md]="100 / 2"
+                        [fxFlex.lt-md]="100"
+                        class="single-photo"
+                        [key]="video.key"
+                        [site]="video.site"
+                    ></app-embed-video>
+                </ng-container>
+            </div>
+        </mat-tab>
+        <mat-tab *ngIf="photos" label="Walpaper">
+            <app-image-galary
+                [imageDetails]="photos.backdrops"
+            ></app-image-galary>
+        </mat-tab>
+        <mat-tab *ngIf="photos" label="Posters">
+            <app-image-galary
+                [imageDetails]="photos.posters"
+            ></app-image-galary>
+        </mat-tab>
+        <mat-tab *ngIf="photos" label="Logos">
+            <app-image-galary [imageDetails]="photos.logos"></app-image-galary>
+        </mat-tab>
+    </mat-tab-group>
 </section>
 
-<section class="myTab">
-  <mat-tab-group mat-stretch-tabs="false">
-    <mat-tab label="Overview">
-      <div
-        fxFlex="100"
-        fxLayout="row"
-        fxLayout.lt-md="column"
-        fxLayoutAlign="space-between start"
-        class="overview-area"
-      >
-        <div fxFlex="20" fxFlex.lt-md="100" class="image">
-          <img
-            fxFlex="100"
-            src="https://image.tmdb.org/t/p/w342/ps2oKfhY6DL3alynlSqY97gHSsg.jpg"
-            alt=""
-          />
-        </div>
-        <div fxFlex="75" fxFlex.lt-md="100" class="meta">
-          <h2>Overview</h2>
-          <p>
-            Framed in the 1940s for the double murder of his wife and her lover,
-            upstanding banker Andy Dufresne begins a new life at the Shawshank
-            prison, where he puts his accounting skills to work for an amoral
-            warden. During his long stretch in prison, Dufresne comes to be
-            admired by the other inmates -- including an older prisoner named
-            Red -- for his integrity and unquenchable sense of hope.
-          </p>
-          <div class="meta-data">
-            <table fxFlex="100">
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Release Date:</th>
-                <td>20.12.1974</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Language:</th>
-                <td>EN</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Revenue:</th>
-                <td>$102,600,000.0</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Duration:</th>
-                <td>202 min</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Status:</th>
-                <td>Released</td>
-              </tr>
-              <tr>
-                <th fxFlex="20" fxFlex.lt-md="50">Genres:</th>
-                <td>Drama Crime</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </mat-tab>
-    <mat-tab label="Photos">
-      <div class="photo-area" fxFlex="100" fxLayout="row wrap">
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-      </div>
-    </mat-tab>
-    <mat-tab label="Videos">
-      <div class="photo-area" fxFlex="100" fxLayout="row wrap">
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-        <div [fxFlex]="100 / 3" [fxFlex.lt-lg]="100 / 2" class="single-photo">
-          <img
-            src="https://image.tmdb.org/t/p/original/uu4On1xXiiDGeYwHSbp7BSQBTGv.jpg"
-            alt=""
-            width="100%"
-          />
-        </div>
-      </div>
-    </mat-tab>
-  </mat-tab-group>
+<section class="casts" *ngIf="credits">
+    <app-casts [casts]="credits.cast"></app-casts>
 </section>
-<p>single-movie works!</p>
+<section class="crews" *ngIf="credits">
+    <app-crews [crews]="credits.crew"></app-crews>
+</section>
+
+<section>
+    <app-items-banner
+        movieType="Similar Movies"
+        [items]="similarMovies"
+        [showableMovieNumber]="20"
+        [numberOfMoviesInARow]="5"
+    >
+    </app-items-banner>
+</section>

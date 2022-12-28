@@ -1,9 +1,14 @@
-<a fxFlex="100" [routerLink]="'/movie/' + item?.id" class="single-movie">
+<a
+    *ngIf="item"
+    fxFlex="100"
+    [routerLink]="'/movie/' + item.id"
+    class="single-movie"
+>
     <div class="Image-and-rating">
         <div class="image">
             <img
                 fxFlex="100"
-                src="https://image.tmdb.org/t/p/w342/{{ item?.backdrop_path }}"
+                src="https://image.tmdb.org/t/p/w342/{{ item.backdrop_path }}"
                 alt=""
             />
         </div>
@@ -11,10 +16,10 @@
             <span class="rating-icon">
                 <mat-icon class="rating-icon-inner" fontIcon="star"></mat-icon>
             </span>
-            <span class="rating-text">{{ item?.vote_average }}</span>
+            <span class="rating-text">{{ item.vote_average }}</span>
         </div>
     </div>
     <div class="movie-title">
-        {{ item?.title }}
+        {{ item.title }}
     </div>
 </a>

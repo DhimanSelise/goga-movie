@@ -1,0 +1,24 @@
+<h2>Casts</h2>
+<p-carousel
+    [value]="casts"
+    [numVisible]="5"
+    [numScroll]="1"
+    [responsiveOptions]="responsiveOptions"
+>
+    <ng-template let-cast pTemplate="item">
+        <div>
+            <img
+                [src]="
+                    cast.profile_path
+                        ? 'https://image.tmdb.org/t/p/w342/' + cast.profile_path
+                        : './../../../assets/img/dumy-pp1.png'
+                "
+                alt=""
+            />
+            <h3>
+                {{ cast.name }}
+                <span>( {{ cast.character }} )</span>
+            </h3>
+        </div>
+    </ng-template>
+</p-carousel>

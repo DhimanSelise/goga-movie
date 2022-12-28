@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'
+import { Credits, Movie, Photos, SingleMovie, Video } from '../models/movie';
+import { MoviesService } from '../services/movies.service';
 
 @Component({
   selector: 'app-single-movie',
@@ -9,13 +11,38 @@ import {ActivatedRoute} from '@angular/router'
 })
 export class SingleMovieComponent implements OnInit {
 
+  item:SingleMovie | null = null;
+  videos: Video[] = [];
+  photos:Photos | null = null;
+  similarMovies:Movie[]=[];
+  credits:Credits | null = null ; 
 
-  constructor(private route: ActivatedRoute) { }
-
+  constructor(private route: ActivatedRoute, private movieServie:MoviesService ) { }
+  
   ngOnInit(): void {
     this.route.params.subscribe(({id})=>{
       console.log(id) ; 
+      this.movieServie.getMovie(id).subscribe(movieData=>{
+        this.item = movieData;
+      }) ; 
+
+      this.movieServie.getVideos(id).subscribe(videoData=>{
+        this.videos = videoData;
+      }) ; 
+
+      this.movieServie.getPhotos(id).subscribe((photoData:Photos)=>{
+        this.photos = photoData;
+      })
+
+      this.movieServie.getSimilarMovies(id).subscribe((data)=>{
+        this.similarMovies = data;
+      })
+
+      this.movieServie.getMovieCredits(id).subscribe((creditsData)=>{
+        this.credits = creditsData ; 
+      })
     });
   }
+
 
 }

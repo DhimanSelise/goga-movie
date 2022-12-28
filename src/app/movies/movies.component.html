@@ -1,1 +1,29 @@
-<p>movies works!</p>
+<div class="searchBox">
+    <span fxFlex="100" class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input
+            fxFlex="100"
+            type="text"
+            pInputText
+            placeholder="Search"
+            [(ngModel)]="SearchValue"
+            (change)="makeSearch()"
+            #HashValue
+        />
+    </span>
+</div>
+
+<app-items-banner
+    [numberOfMoviesInARow]="5"
+    [showableMovieNumber]="20"
+    [items]="popularMovies"
+></app-items-banner>
+
+<div class="paginator">
+    <p-paginator
+        [rows]="20"
+        [totalRecords]="50000"
+        (onPageChange)="paginate($event)"
+        [rowsPerPageOptions]="[100, 200, 300, 400, 500]"
+    ></p-paginator>
+</div>

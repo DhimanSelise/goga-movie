@@ -20,6 +20,19 @@ import { ItemsBannerComponent } from './components/items-banner/items-banner.com
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { SingleMovieComponent } from './single-movie/single-movie.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { EmbedVideoComponent } from './single-movie/embed-video/embed-video.component';
+import {ImageModule} from 'primeng/image';
+import {AccordionModule} from 'primeng/accordion';
+import { ImageGalaryComponent } from './single-movie/image-galary/image-galary.component';
+import { CastsComponent } from './single-movie/casts/casts.component';
+import { CrewsComponent } from './single-movie/crews/crews.component';
+import {CarouselModule} from 'primeng/carousel';
+import {PaginatorModule} from 'primeng/paginator';
+import {InputTextModule} from 'primeng/inputtext';
+import { GenresHolderComponent } from './genres/genres-holder/genres-holder.component';
+import { ItemsTvBannerComponent } from './components/items-tv-banner/items-tv-banner.component';
+import { TvItemComponent } from './components/tv-item/tv-item.component';
+
 
 
 @NgModule({
@@ -36,6 +49,13 @@ import { CalculatorComponent } from './calculator/calculator.component';
     MovieItemComponent,
     SingleMovieComponent,
     CalculatorComponent,
+    EmbedVideoComponent,
+    ImageGalaryComponent,
+    CastsComponent,
+    CrewsComponent,
+    GenresHolderComponent,
+    ItemsTvBannerComponent,
+    TvItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +65,13 @@ import { CalculatorComponent } from './calculator/calculator.component';
     FormsModule,
     HttpClientModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    ImageModule,
+    AccordionModule,
+    CarouselModule,
+    PaginatorModule,
+    InputTextModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
