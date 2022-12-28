@@ -1,1 +1,19 @@
-<p>genres works!</p>
+<div
+    fxFlex="100"
+    fxLayout="row wrap"
+    fxLayoutAlign="center center"
+    class="all-genres"
+>
+    <div
+        [fxFlex]="100 / 6.5"
+        [fxFlex.md]="100 / 4.2"
+        [fxFlex.lt-md]="100 / 2.2"
+        *ngFor="let genre of Genres"
+        fxLayoutAlign="center center"
+        class="genre"
+    >
+        <a [routerLink]="'/movie/genres/' + genre.id" class="genre-link">{{
+            genre.name
+        }}</a>
+    </div>
+</div>

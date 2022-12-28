@@ -1,1 +1,19 @@
-<p>tv-shows works!</p>
+<app-items-tv-banner
+    tvShowType="Popular TV Shows"
+    [items]="popularTvShows"
+></app-items-tv-banner>
+
+<app-items-tv-banner
+    tvShowType="Top Rated TV Show"
+    [items]="top_ratedTvShows"
+></app-items-tv-banner>
+
+<app-items-tv-banner
+    tvShowType="Now Showing on TV"
+    [items]="on_the_airTvShows"
+></app-items-tv-banner>
+
+<app-items-tv-banner
+    tvShowType="Today's TV Shows"
+    [items]="airing_todayTvShows"
+></app-items-tv-banner>

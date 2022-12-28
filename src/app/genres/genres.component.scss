@@ -1,0 +1,12 @@
+.all-genres{
+    .genre{
+        height: 50px;
+        background-color: #ffd54f;
+        margin: 10px;
+        &-link{
+            text-decoration: none;
+            font-size: 1.6rem;
+            color: black;
+        }
+    }
+}

@@ -29,6 +29,9 @@ import { CrewsComponent } from './single-movie/crews/crews.component';
 import {CarouselModule} from 'primeng/carousel';
 import {PaginatorModule} from 'primeng/paginator';
 import {InputTextModule} from 'primeng/inputtext';
+import { GenresHolderComponent } from './genres/genres-holder/genres-holder.component';
+import { ItemsTvBannerComponent } from './components/items-tv-banner/items-tv-banner.component';
+import { TvItemComponent } from './components/tv-item/tv-item.component';
 
 
 
@@ -50,6 +53,9 @@ import {InputTextModule} from 'primeng/inputtext';
     ImageGalaryComponent,
     CastsComponent,
     CrewsComponent,
+    GenresHolderComponent,
+    ItemsTvBannerComponent,
+    TvItemComponent,
   ],
   imports: [
     BrowserModule,

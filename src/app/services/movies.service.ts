@@ -57,5 +57,12 @@ export class MoviesService {
     return this.http.get<Credits>(this.baseUrl+'/movie/'+id+'/credits'+this.APIKey);
   }
 
+  getMovieBySearch(searchValue:string){
+	return this.http.get<Movie[]>(this.baseUrl+'/search/movie'+this.APIKey+'&query='+searchValue).pipe(
+		map((response:any)=>{
+		  return response.results;
+		})
+	  )
+  }
   // Helper fucntion
 }

@@ -1,0 +1,20 @@
+<a *ngIf="item" fxFlex="100" [routerLink]="'/tv-shows'" class="single-movie">
+    <div class="Image-and-rating">
+        <div class="image">
+            <img
+                fxFlex="100"
+                src="https://image.tmdb.org/t/p/w342/{{ item.backdrop_path }}"
+                alt=""
+            />
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center" class="rating">
+            <span class="rating-icon">
+                <mat-icon class="rating-icon-inner" fontIcon="star"></mat-icon>
+            </span>
+            <span class="rating-text">{{ item.vote_average }}</span>
+        </div>
+    </div>
+    <div class="movie-title">
+        {{ item.name }}
+    </div>
+</a>
