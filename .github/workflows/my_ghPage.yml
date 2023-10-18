@@ -14,5 +14,5 @@ jobs:
       run: npm install
     - name: Build and deploy
       run: |
-        npm run build --prod --output-path=dist
+        npm run build --output-path=dist
         npx angular-cli-ghpages --dir=dist --repo=https://${{ secrets.GITHUB_TOKEN }}@github.com/DhimanSelise/goga-movie.git
